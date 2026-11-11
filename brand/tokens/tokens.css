@@ -1,0 +1,80 @@
+/* Keyblank design tokens. Source of truth: tokens.json. See ../DESIGN.md. */
+
+:root {
+  /* Color: base palette */
+  --kb-blue: #1E3F94;        /* Layout blue. Brand color, primary surfaces, links on light */
+  --kb-blue-deep: #16306F;   /* Code blocks and raised surfaces on dark */
+  --kb-ink: #0F1E44;         /* Body text on light, page background on dark */
+  --kb-muted: #4A5A80;       /* Secondary text on light */
+  --kb-rule: #B9C7E2;        /* 1px rules and borders on light */
+  --kb-scribe: #E4ECF8;      /* The logo on blue, tinted fills */
+  --kb-sheet: #F3F6FB;       /* Page background on light, body text on dark */
+  --kb-wash: #C9D7F2;        /* Secondary text on dark */
+  --kb-sky: #9DB8F0;         /* Accent on dark: prompts, links, highlights */
+
+  /* Color: credential states (always paired with a word, never color alone) */
+  --kb-live: #1F7A4D;
+  --kb-expiring: #8A5A00;
+  --kb-revoked: #B3261E;
+
+  /* Color: roles (light theme) */
+  --kb-bg: var(--kb-sheet);
+  --kb-surface: #FFFFFF;
+  --kb-text: var(--kb-ink);
+  --kb-text-muted: var(--kb-muted);
+  --kb-accent: var(--kb-blue);
+  --kb-border: var(--kb-rule);
+  --kb-code-bg: var(--kb-blue-deep);
+  --kb-code-text: var(--kb-sheet);
+
+  /* Type */
+  --kb-font-sans: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --kb-font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --kb-text-xs: 12px;
+  --kb-text-sm: 14px;
+  --kb-text-md: 17px;
+  --kb-text-lg: 22px;
+  --kb-text-xl: 30px;
+  --kb-text-2xl: 44px;
+  --kb-tracking-caps: 0.08em;   /* uppercase labels and titles */
+  --kb-tracking-logo: 0.1em;    /* the wordmark only */
+
+  /* Space: 4px grid */
+  --kb-space-1: 4px;
+  --kb-space-2: 8px;
+  --kb-space-3: 12px;
+  --kb-space-4: 16px;
+  --kb-space-6: 24px;
+  --kb-space-8: 32px;
+  --kb-space-12: 48px;
+
+  /* Shape */
+  --kb-radius: 2px;
+  --kb-rule-width: 1px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --kb-bg: var(--kb-ink);
+    --kb-surface: var(--kb-blue-deep);
+    --kb-text: var(--kb-sheet);
+    --kb-text-muted: var(--kb-wash);
+    --kb-accent: var(--kb-sky);
+    --kb-border: #34509A;
+    --kb-live: #6FCF97;
+    --kb-expiring: #E5B454;
+    --kb-revoked: #F59A90;
+  }
+}
+
+:root[data-theme="dark"] {
+  --kb-bg: var(--kb-ink);
+  --kb-surface: var(--kb-blue-deep);
+  --kb-text: var(--kb-sheet);
+  --kb-text-muted: var(--kb-wash);
+  --kb-accent: var(--kb-sky);
+  --kb-border: #34509A;
+  --kb-live: #6FCF97;
+  --kb-expiring: #E5B454;
+  --kb-revoked: #F59A90;
+}
